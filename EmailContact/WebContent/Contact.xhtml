@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head></h:head>
+<body>
+	<h:form>
+		<h:commandButton value="Home" action="Menu" />
+		<h2>
+			<h:panelGrid style="margin: 0 auto;">ADD CONTACT</h:panelGrid>
+		</h2>
+	</h:form>
+	<hr />
+	<br />
+	<h:form>
+		<h:outputText value="Email Id" />
+		<h:outputText value="&#09;" />
+		<h:inputText value="#{manageContact.emailId}" required="true"
+			requiredMessage="Enter email id to add" />
+		<br />
+		<br />
+		<h:outputText value="First name" />
+		<h:outputText value="&#09;" />
+		<h:inputText value="#{manageContact.firstName}" required="true"
+			requiredMessage="Enter first name to add" />
+		<br />
+		<br />
+		<h:outputText value="Last name" />
+		<h:outputText value="&#09;" />
+		<h:inputText value="#{manageContact.lastName}" required="true"
+			requiredMessage="Enter last name to add" />
+		<br />
+		<br />
+		<h:outputText value="Type" />
+		<h:outputText value="&#09;" />
+		<h:selectOneMenu value="#{manageContact.type}" required="true"
+			requiredMessage="Make a selection of type">
+			<f:selectItem />
+			<f:selectItem itemValue="Student" itemLabel="Student" />
+			<f:selectItem itemValue="Developer" itemLabel="Developer" />
+			<f:selectItem itemValue="HR" itemLabel="HR" />
+			<f:selectItem itemValue="Doctor" itemLabel="Doctor" />
+			<f:selectItem itemValue="Teacher" itemLabel="Teacher" />
+			<f:selectItem itemValue="Chartered accountant"
+				itemLabel="Chartered accountant" />
+		</h:selectOneMenu>
+		<br />
+		<br />
+		<h:commandButton value="Add Contact"
+			action="#{manageContact.addContact}" />
+		<h:messages />
+	</h:form>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head></h:head>
+<body>
+	<h3>Select the type</h3>
+	<h:form>
+		<h:outputText value="Types:" />
+		<h:outputText value="&#09;" />
+		<p:selectCheckboxMenu id="chkbox"
+			value="#{selectedItems.selectedTypes}" layout="pageDirection"
+			required="true" requiredMessage="check at least one checkbox">
+			<f:selectItem itemValue="Student" itemLabel="Student" />
+			<f:selectItem itemValue="Developer" itemLabel="Developer" />
+			<f:selectItem itemValue="HR" itemLabel="HR" />
+			<f:selectItem itemValue="Doctor" itemLabel="Doctor" />
+			<f:selectItem itemValue="Teacher" itemLabel="Teacher" />
+			<f:selectItem itemValue="Chartered accountant"
+				itemLabel="Chartered accountant" />
+
+		</p:selectCheckboxMenu>
+		<h:message for="chkbox" style="color:red" />
+		<br />
+		<br />
+		<h:commandButton value="Assign"
+			action="#{selectedItems.basedOnType}" />
+		<h:messages />
+	</h:form>
+</body>
+</html>

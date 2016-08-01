@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head></h:head>
+<body>
+	<h:form>
+		<h:commandButton value="Home" action="Menu" />
+		<h2>
+			<h:panelGrid style="margin: 0 auto;">MANAGE CATEGORY</h:panelGrid>
+		</h2>
+	</h:form>
+	<hr />
+	<br />
+	<h:panelGrid style="margin: 0 auto;">
+		<h:form>
+			<h:commandButton value="ADD" action="AddCategory" />
+			<h:outputText value="&emsp;" />
+			<h:outputText value="&emsp;" />
+			<h:commandButton value="DELETE" action="DeleteCategory" />
+			<h:outputText value="&emsp;" />
+			<h:outputText value="&emsp;" />
+			<h:commandButton value="EDIT" action="EditCategory" />
+			<br />
+			<br />
+		</h:form>
+		<h:form>
+			<h:outputText value=" List of categories:" />
+			<br />
+			<h:selectManyCheckbox id="chkbox"
+				value="#{selectedItems.selectedCategory}" layout="pageDirection"
+				required="true" requiredMessage="Make at least one selection!!!">
+				<f:selectItems value="#{allCategories.allCategories}" />
+			</h:selectManyCheckbox>
+			<br />
+			<h:message for="chkbox" style="color:red" />
+			<br />
+			<br />
+			<h:commandButton id="button" value="Assign Contacts"
+				action="AssignContacts" />
+			<br />
+			<br />
+			<h:commandButton value="Send Mail" action="Message" />
+			<br />
+			<br />
+			<h:commandButton value="Update" action="Result" />
+		</h:form>
+	</h:panelGrid>
+</body>
+</html>
