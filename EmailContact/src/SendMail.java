@@ -17,8 +17,8 @@ public class SendMail {
 	public void send(List<String> contacts, String mail, String subject,
 			String category) {
 		final String SMTP_HOST_NAME = "smtp.sendgrid.net";
-		final String username = "keerthana.muralidharan";
-		final String password = "keerthu#257";
+		final String username = "Ur_sendgrid_username";
+		final String password = "Ur_sendgrid_password";
 
 		String msg;
 		Properties props = new Properties();
@@ -38,7 +38,7 @@ public class SendMail {
 
 			for (int i = 0; i < contacts.size(); i++) {
 				Message message = new MimeMessage(session);
-				message.setFrom(new InternetAddress("keerthanapm257@gmail.com"));
+				message.setFrom(new InternetAddress("aaa@gmail.com"));
 
 				InternetAddress[] recipientAddress = new InternetAddress[contacts
 						.size()];
